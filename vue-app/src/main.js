@@ -6,6 +6,7 @@ import Catalog from '@/pages/catalog/index.vue';
 import CatalogCategory from '@/pages/catalog/category.vue';
 import CatalogDetail from '@/pages/catalog/id.vue';
 import Cart from '@/pages/cart.vue';
+import Profile from '@/pages/profile/profile.vue';
 
 import App from '@/App.vue';
 
@@ -36,6 +37,10 @@ const routes = [
     { 
         path: '/cart', 
         component: Cart 
+    },
+    { 
+        path: '/profile', 
+        component: Profile
     }
 ];
 
