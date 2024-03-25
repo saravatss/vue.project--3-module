@@ -5,7 +5,7 @@ import App from '@/App.vue';
 
 import '@/assets/main.css';
 
-const { authInit, getUser } = useAuth();
+const { authInit } = useAuth();
 
 const app = createApp(App);
 

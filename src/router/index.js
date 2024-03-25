@@ -19,6 +19,14 @@ const routes = [
             auth: false
         }
     },
+    { 
+        name: 'SignUp',
+        path: '/auth/sign-up', 
+        component: () => import('@/pages/auth/sign-up.vue'),
+        meta: {
+            auth: false
+        }
+    },
     {
         name: 'Search',
         path: '/search',
@@ -62,9 +70,41 @@ const routes = [
         }
     },
     { 
+        name: 'Ordering',
+        path: '/ordering', 
+        component: () => import('@/pages/ordering.vue'),
+        meta: {
+            auth: true
+        }
+    },
+    { 
         name: 'Profile',
         path: '/profile', 
         component: () => import('@/pages/profile/index.vue'),
+        meta: {
+            auth: true
+        }
+    },
+    { 
+        name: 'ProductAdd',
+        path: '/profile/add-product', 
+        component: () => import('@/pages/profile/add-product.vue'),
+        meta: {
+            auth: true
+        }
+    },
+    { 
+        name: 'MyProducts',
+        path: '/profile/products', 
+        component: () => import('@/pages/profile/products.vue'),
+        meta: {
+            auth: true
+        }
+    },
+    { 
+        name: 'Favorites',
+        path: '/profile/favorites', 
+        component: () => import('@/pages/profile/favorites.vue'),
         meta: {
             auth: true
         }

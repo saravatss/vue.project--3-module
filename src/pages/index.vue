@@ -1,28 +1,60 @@
 <template>
-    <v-container>
-        <h2>Каталог смартфонов</h2>
+    <v-layout-default>
+        <v-container>
+            <h2>Каталог смартфонов</h2>
 
-        <router-link
-            v-for="product in smartphones"
-            :to="`/catalog/${product.category}/${product.id}`"
-        >
-            {{ product.title }}
-        </router-link>
+            <v-row>
+                <v-col 
+                    v-for="product in smartphones"
+                    span="3"
+                    md="6"
+                    sm="12"
+                >
+                    <v-catalog-card 
+                        :id="product.id"
+                        :images="product.images"
+                        :title="product.title"
+                        :price="product.price"
+                        :category="product.categoryId"
+                        :is-favorites="product.isFavorites"
+                        @addToFavorites="onToggleFavorites"
+                    />
+                </v-col>
+            </v-row>
 
-        <h2>Каталог laptops</h2>
+            <h2>Каталог laptops</h2>
 
-        <router-link
-            v-for="product in laptops"
-            :to="`/catalog/${product.category}/${product.id}`"
-        >
-            {{ product.title }}
-        </router-link>
-    </v-container>
+            <v-row>
+                <v-col 
+                    v-for="product in laptops"
+                    span="3"
+                    md="6"
+                    sm="12"
+                >
+                    <v-catalog-card 
+                        :id="product.id"
+                        :price="product.price"
+                        :images="product.images"
+                        :title="product.title"
+                        :category="product.categoryId"
+                        :is-favorites="product.isFavorites"
+                        @add-to-favorites="onToggleFavorites"
+                    />
+                </v-col>
+            </v-row>
+        </v-container>
+    </v-layout-default>
 </template>
 
 <script setup>
-    import { useCatalogCategory } from '@/composables/useCatalogCategory';
+    import { useCatalogCategory, useFavorites } from '@/composables';
+    import VLayoutDefault from '@/components/Layouts/VLayoutDefault.vue';
     import VContainer from '@/components/VContainer.vue';
+    import VRow from '@/components/UI/VRow.vue';
+    import VCol from '@/components/UI/VCol.vue';
+    import VCatalogCard from '@/components/VCatalogCard.vue';
+
+    const { onToggleFavorites } = useFavorites();
 
     const { 
         products: smartphones, 
@@ -34,6 +66,6 @@
         getProductsCategory: getProductsCategoryLaptops
     } = useCatalogCategory();
 
-    getProductsCategorySmartphones('smartphones');
-    getProductsCategoryLaptops('laptops');
+    getProductsCategorySmartphones(1);
+    getProductsCategoryLaptops(2);
 </script>

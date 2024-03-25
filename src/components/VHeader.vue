@@ -1,27 +1,29 @@
 <template>
     <header class="v-header">
         <v-container>
-            <div class="v-header__inner">
-                <v-logo/>
+            <v-row align="center" justify="beetwen" no-gutters>
+                <v-col>
+                    <v-sidebar-menu/>
+                </v-col>
 
-                <v-menu/>
+                <v-col>
+                    <v-logo/>
+                </v-col>
 
-                <div>
+                <v-col>
                     <input type="text" v-model="search">
 
                     <button @click="onSearch">@</button>
-                </div>
+                </v-col>
 
-                <div>
+                <v-col>
                     <router-link 
                         v-if="isAuth"
                         to="/profile" 
                         class="v-menu__item"
                     >
                         <template v-if="user">
-                            <img :src="user.image" width="40px" height="40px">
-
-                            {{ user.firstName }}
+                            {{ user.firstname }}
                         </template>
                     </router-link>
 
@@ -32,8 +34,8 @@
                     >
                         Вход
                     </router-link>
-                </div>
-            </div>
+                </v-col>
+            </v-row>
         </v-container>
     </header>
 </template>
@@ -42,8 +44,10 @@
     import { ref } from 'vue';
     import { useRouter } from 'vue-router';
     import { useAuth } from '@/composables';
+    import VRow from '@/components/UI/VRow.vue';
+    import VCol from '@/components/UI/VCol.vue';
     import VLogo from '@/components/VLogo.vue';
-    import VMenu from '@/components/VMenu.vue';
+    import VSidebarMenu from '@/components/VSidebarMenu.vue';
     import VContainer from '@/components/VContainer.vue';
 
     const search = ref();
@@ -63,15 +67,15 @@
 
 <style>
     .v-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+
+        background-color: #fff;
+
         padding: 10px 0;
         border-bottom: 1px solid;
-    }
-
-    .v-header__inner {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0 50px;
     }
 </style>

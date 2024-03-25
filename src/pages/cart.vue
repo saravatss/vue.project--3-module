@@ -1,26 +1,69 @@
 <template>
-    <v-container>
-        <div>
-            Сумма: {{ cart.total }}р
-        </div>
+    <v-layout-default>
+        <v-container>
+            <div>
+                Кол-во товаров: {{ cartTotalCount }}
+            </div>
 
-        <hr>
+            <div>
+                Сумма товаров: {{ cartTotalSum }}р.
+            </div>
 
-        <div v-for="product in cart.products">
-            <img :src="product.thumbnail" alt="">
+            <template v-if="cartNotDelay.length">
+                <h5>Товары</h5>
+                <v-cart-card 
+                    v-for="cartItem in cartNotDelay"
+                    :id="cartItem.id"
+                    :title="cartItem.title"
+                    :price="cartItem.price"
+                    :quantity="cartItem.quantity"
+                    :image="cartItem.image"
+                    :delay="cartItem.delay"
+                    @change-count="onChangeCount"
+                    @change-delay="onChangeDelay"
+                    @delete="onDelete"
+                />
+            </template>
 
-            <h6>{{ product.title }}</h6>
+            <template v-if="cartDelay.length">
+                <h5>Отложенные товары</h5>
+                <v-cart-card 
+                    v-for="cartItem in cartDelay"
+                    :id="cartItem.id"
+                    :title="cartItem.title"
+                    :price="cartItem.price"
+                    :quantity="cartItem.quantity"
+                    :image="cartItem.image"
+                    :delay="cartItem.delay"
+                    @change-count="onChangeCount"
+                    @change-delay="onChangeDelay"
+                    @delete="onDelete"
+                />
+            </template>
 
-            <div>{{ product.price }}</div>
-        </div>
-    </v-container>
+            <router-link to="/ordering">
+                Перейти к оформлению
+            </router-link>
+        </v-container>
+    </v-layout-default>
 </template>
 
 <script setup>
     import { useCart } from '@/composables';
+    import VLayoutDefault from '@/components/Layouts/VLayoutDefault.vue';
     import VContainer from '@/components/VContainer.vue';
+    import VCartCard from '@/components/VCartCard.vue';
 
-    const { cart, getCart } = useCart();
+    const { 
+        cartDelay,
+        cartNotDelay,
+        cartTotalCount, 
+        cartTotalSum, 
+        getCart, 
+        onChangeCount, 
+        onChangeDelay, 
+        onDelete 
+    } = useCart();
 
     getCart();
 </script>

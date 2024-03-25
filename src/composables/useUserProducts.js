@@ -1,11 +1,14 @@
 import { ref } from 'vue';
 import { CatalogApiService } from '@/services';
+import { useAuth } from './useAuth';
 
-export function useCatalogCategory () {
+export function useUserProducts () {
+    const { user } = useAuth();
+
     const products = ref([]);
 
-    function getProductsCategory (id, params) {
-        CatalogApiService.getCategory(id, params)
+    function getUserProducts () {
+        CatalogApiService.getUserProducts(user.value.id)
             .then(data => {
                 products.value = data;
             });
@@ -13,6 +16,6 @@ export function useCatalogCategory () {
 
     return {
         products,
-        getProductsCategory
+        getUserProducts
     }
 }
