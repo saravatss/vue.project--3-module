@@ -2,21 +2,10 @@
     <header class="v-header">
         <v-container>
             <v-row align="center" justify="beetwen" no-gutters>
-                <v-col>
                     <v-sidebar-menu/>
-                </v-col>
 
-                <v-col>
                     <v-logo/>
-                </v-col>
 
-                <v-col>
-                    <input type="text" v-model="search">
-
-                    <button @click="onSearch">@</button>
-                </v-col>
-
-                <v-col>
                     <router-link 
                         v-if="isAuth"
                         to="/profile" 
@@ -34,7 +23,6 @@
                     >
                         Вход
                     </router-link>
-                </v-col>
             </v-row>
         </v-container>
     </header>
@@ -45,7 +33,6 @@
     import { useRouter } from 'vue-router';
     import { useAuth } from '@/composables';
     import VRow from '@/components/UI/VRow.vue';
-    import VCol from '@/components/UI/VCol.vue';
     import VLogo from '@/components/VLogo.vue';
     import VSidebarMenu from '@/components/VSidebarMenu.vue';
     import VContainer from '@/components/VContainer.vue';
@@ -73,7 +60,7 @@
         right: 0;
         z-index: 100;
 
-        background-color: #fff;
+        background-color: #F0F0F2;
 
         padding: 10px 0;
         border-bottom: 1px solid;

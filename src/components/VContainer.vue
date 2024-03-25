@@ -6,7 +6,7 @@
 
 <style>
     .v-container {
-        max-width: 1300px;
+        max-width: 1184px;
         margin: 0 auto;
         padding: 0 10px;
     }

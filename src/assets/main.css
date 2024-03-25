@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:500");
+
 :root {
-    --color-white: #fff;
+    --color-white: #F7F7FB;
     --color-black: #000;
+    --color-grey: #F0F0F2;
+    --color-blue: #3B35AA;
+    --color-orange: #FFAD40;
+    --color-light-orange: #F9C887;
+    --color-light-blue: #A7A5D5;
+
 
     --col-count: 12;
     --col-size: calc(100% / 12);
@@ -12,4 +20,5 @@
 
 body {
     margin: 0;
+    background-color: #F0F0F2;
 }

@@ -3,16 +3,20 @@
         class="v-logo"
         to="/"
     />
+
+    <div id="logo">
+        <img :src="require('./assets//logo.png').default" alt="Logo">
+    </div>
 </template>
 
 <style>
     .v-logo {
-        display: block;
-        width: 80px;
-        height: 40px;
-
-        background: #000;
-
-        border-radius: 5px;
+        width: 115px;
+        height: 82px;
     }
 </style>
+    
+<script>
+    export default {
+    }
+</script>
