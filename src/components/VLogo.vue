@@ -4,19 +4,14 @@
         to="/"
     />
 
-    <div id="logo">
-        <img :src="require('./assets//logo.png').default" alt="Logo">
+    <div>
+        <img src="/src/assets/logo.png" alt="logo" class="v-logo"
+        to="/">
     </div>
 </template>
 
 <style>
     .v-logo {
-        width: 115px;
-        height: 82px;
+        width: 100px;
     }
 </style>
-    
-<script>
-    export default {
-    }
-</script>
