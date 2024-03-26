@@ -5,12 +5,13 @@
                     <v-sidebar-menu/>
 
                     <v-logo/>
+                    <div class="fullinput-search">
+                        <input type="text" v-model="search" class="input-search" placeholder="Найдите то, что нужно">
 
-                    <input type="text" v-model="search">
-
-                    <button @click="onSearch" class="button--search">
-                        <img src="/src/assets/icons/search.png" alt="search" width="28px";>
-                    </button>
+                        <button @click="onSearch" class="button--search">
+                            <img src="/src/assets/icons/search.png" alt="search" width="15px">
+                        </button>
+                    </div>
 
                     <router-link 
                         v-if="isAuth"
@@ -27,7 +28,13 @@
                         to="/auth/sign-in" 
                         class="v-menu__item"
                     >
-                        Вход
+                        <img src="/src/assets/icons/person.png" alt="person" width="25px">
+                    </router-link>
+
+                    <router-link 
+                        to="/cart" 
+                        class="v-menu__item">
+                            <img src="/src/assets/icons/cart.png" alt="cart" width="25px">
                     </router-link>
             </v-row>
         </v-container>
@@ -67,15 +74,26 @@
         right: 0;
         z-index: 100;
 
-        background-color: #fff;
+        background-color: #F0F0F2;
 
         padding: 10px 0;
-        border-bottom: 1px solid;
     }
 
     .button--search {
         border: 0px;
         background-color: transparent;
 
+    }
+
+    .input-search {
+        height: 35px;
+        width: 170px;
+        font-family: Raleway;
+    }
+
+    .fullinput-search {
+        display: flex;
+        justify-content: center;
+        color: #A7A5D5;
     }
 </style>

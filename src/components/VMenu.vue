@@ -1,12 +1,18 @@
 <template>
     <nav class="v-menu">
+
+        <div class="v-menu__item">Организация и хранение</div>
+        <div class="v-menu__item">Освещение и аудио</div>
+        <div class="v-menu__item">Текстиль</div>
+
         <router-link to="/catalog" class="v-menu__item">
-            Каталог
+            Кухонные мелочи
         </router-link>
 
-        <router-link to="/cart" class="v-menu__item">
-            Корзина
-        </router-link>
+        <div class="v-menu__item">Для ванной</div>
+        <div class="v-menu__item">Атмосфера и релаксация</div>
+        <div class="v-menu__item">Растения и цветы</div>
+        <div class="v-menu__item">На стену</div>
     </nav>
 </template>
 
@@ -25,9 +31,10 @@
 
     .v-menu__item {
         color: var(--color-black);
+        border: 0px;
     }
 
     .v-menu__item.router-link-active {
-        color: red;
+        color: var(--color-blue);
     }
 </style>

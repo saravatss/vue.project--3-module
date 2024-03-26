@@ -47,7 +47,7 @@
     .fade-in-left-enter-from,
     .fade-in-left-leave-to {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateY(-100px);
     }
 
     .v-sidebar-menu {
@@ -106,17 +106,19 @@
         bottom: 0;
         right: 0;
 
-        background: rgba(0,0,0,.5);
+        background: rgba(8,6,37,.5);
     }
 
     .v-sidebar-menu__content-body {
         position: absolute;
         top: 0;
-        left: 0;
-        bottom: 0;
+        margin-left: 180px;
 
-        width: 400px;
-        background-color: #fff;
-        box-shadow: 0 0 10px black;
+
+
+        width: 1312px;
+        height: 550px;
+        border-radius: 8px;
+        background-color: var(--color-grey);
     }
 </style>

@@ -20,7 +20,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 65px;
+    padding-top: 128px;
   }
 
   .layout__main {

@@ -20,7 +20,7 @@
               <br><br>
 
               <button @click="onFilter">
-                Применить
+                Найти
               </button>
             </v-col>
 
