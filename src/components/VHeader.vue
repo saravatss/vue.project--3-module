@@ -46,7 +46,6 @@
     import { useRouter } from 'vue-router';
     import { useAuth } from '@/composables';
     import VRow from '@/components/UI/VRow.vue';
-    import VCol from '@/components/UI/VCol.vue';
     import VLogo from '@/components/VLogo.vue';
     import VSidebarMenu from '@/components/VSidebarMenu.vue';
     import VContainer from '@/components/VContainer.vue';
