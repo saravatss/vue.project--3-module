@@ -3,7 +3,7 @@
         <v-container v-if="product">
             <v-row>
                 <v-col span="7">
-                    <VCatalogDetailGallery :images="product.images"/>
+                        <img class="v-catalog-card__image" :src="image" >
                 </v-col>
 
                 <v-col span="5">
@@ -33,20 +33,6 @@
                                 Добавить в корзину
                             </v-button>
                         </v-col>
-
-                        <v-col span="6">
-                            <v-button
-                                :theme="currentThemeFavoriteButton"
-                                size="large"
-                                wide
-                                @click="onToggleFavorites({
-                                    id: product.id,
-                                    isFavorites: !product.isFavorites
-                                })"
-                            >
-                                {{ product.isFavorites ? 'Удалить из избранного' : 'Добавить в избранное' }}
-                            </v-button>
-                        </v-col>
                     </v-row>
                 </v-col>
             </v-row>
@@ -63,7 +49,6 @@
     import VCol from '@/components/UI/VCol.vue';
     import VButton from '@/components/UI/VButton.vue';
     import VContainer from '@/components/VContainer.vue';
-    import VCatalogDetailGallery from '@/components/VCatalogDetailGallery.vue';
     import { useCart, useFavorites } from '@/composables';
 
     const route = useRoute();

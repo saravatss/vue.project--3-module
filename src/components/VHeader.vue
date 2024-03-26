@@ -2,16 +2,40 @@
     <header class="v-header">
         <v-container>
             <v-row align="center" justify="beetwen" no-gutters>
-                    <v-sidebar-menu/>
+                    
+                    <v-col>
+                        <v-sidebar-menu/>
+                    </v-col>
 
-                    <v-logo/>
-                    <div class="fullinput-search">
-                        <input type="text" v-model="search" class="input-search" placeholder="Найдите то, что нужно">
+                    <v-col>
+                        <div class="ideas"
+                            <img src="/public/icons/ideas.png" alt="search" width="25px">
+                            Идеи
+                        </div>
+                    </v-col>
 
-                        <button @click="onSearch" class="button--search">
-                            <img src="/src/assets/icons/search.png" alt="search" width="15px">
-                        </button>
-                    </div>
+                    <v-col/>
+                    <v-col/>
+                    <v-col/>
+                    <v-col/>
+
+                    <v-col>
+                        <v-logo/>
+                    </v-col>
+                    
+
+                    <v-col>
+                        <div class="fullinput-search">
+                            <input type="text" v-model="search" class="input-search" placeholder="Найдите то, что нужно">
+
+                            <button @click="onSearch" class="button--search">
+                                <img src="/public/icons/search.png" alt="search" width="15px">
+                            </button>
+                        </div>
+                    </v-col>
+
+
+                    <v-col/>
 
                     <router-link 
                         v-if="isAuth"
@@ -23,19 +47,34 @@
                         </template>
                     </router-link>
 
-                    <router-link 
-                        v-else
-                        to="/auth/sign-in" 
-                        class="v-menu__item"
-                    >
-                        <img src="/src/assets/icons/person.png" alt="person" width="25px">
-                    </router-link>
+                    <v-col>
+                        <router-link 
+                            v-if="isAuth"
+                            to="/profile" 
+                            class="v-menu__item"
+                        >
+                            <template v-if="user">
+                                {{ user.firstname }}
+                            </template>
+                        </router-link>
 
-                    <router-link 
-                        to="/cart" 
-                        class="v-menu__item">
-                            <img src="/src/assets/icons/cart.png" alt="cart" width="25px">
-                    </router-link>
+                        <router-link 
+                            v-else
+                            to="/auth/sign-in" 
+                            class="v-menu__item"
+                            >
+                            <img src="/public/icons/person.png" alt="person" width="25px">
+                        </router-link>
+                    </v-col>
+
+                    <v-col>
+                        <router-link 
+                            to="/cart" 
+                            class="v-menu__item">
+                                <img src="/public/icons/cart.png" alt="cart" width="25px">
+                        </router-link>
+                    </v-col>
+
             </v-row>
         </v-container>
     </header>
@@ -94,5 +133,9 @@
         display: flex;
         justify-content: center;
         color: #A7A5D5;
+    }
+
+    .ideas {
+        justify-content: center;
     }
 </style>

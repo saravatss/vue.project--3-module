@@ -1,17 +1,17 @@
 <template>
   <v-layout-default>
     <v-container>
-        <v-row>
-            <v-col span="4">
+      <v-row>
               <div>
-                <h5>Бренды</h5>
-                <input type="radio" v-model="filter.brand" value="Apple"> Apple<br>
-                <input type="radio" v-model="filter.brand" value="Samsung"> Samsung<br>
-                <input type="radio" v-model="filter.brand" value="Acer"> Acer
+                <h5>По категории</h5>
+                <input type="radio" v-model="filter.category" value="Барные аксессуары"> Барные аксессуары<br>
+                <input type="radio" v-model="filter.category" value="Столова посуда"> Столова посуда<br>
+                <input type="radio" v-model="filter.category" value="Аксессуары для кухни"> Аксессуары для кухни<br>
+                <input type="radio" v-model="filter.category" value="Сервировка стола"> Сервировка стола
               </div>
 
               <div>
-                <h5>Цвет</h5>
+                <h5>По цвету</h5>
                 <input type="radio" v-model="filter.color" value="white"> Белый<br>
                 <input type="radio" v-model="filter.color" value="black"> Чёрный<br>
                 <input type="radio" v-model="filter.color" value="red"> Красный
@@ -22,27 +22,24 @@
               <button @click="onFilter">
                 Найти
               </button>
-            </v-col>
+        </v-row>
 
-            <v-col span="8">
-              <v-row>
-                <v-col
-                    v-for="product in products"
-                    span="4"
-                    md="6"
-                    sm="12"
-                >
-                  <v-catalog-card
-                      :id="product.id"
-                      :price="product.price"
-                      :images="product.images"
-                      :title="product.title"
-                      :category="product.categoryId"
-                      :is-favorites="product.isFavorites"
-                      @add-to-cart="onAddToCart"
-                  />
-                </v-col>
-              </v-row>
+
+        <v-row>
+            <v-col 
+                v-for="product in products"
+                span="3"
+                md="6"
+                sm="12"
+            >
+                <v-catalog-card 
+                    :id="product.id"
+                    :price="product.price"
+                    :image="product.image"
+                    :title="product.title"
+                    :category="product.categoryId"
+                    @add-to-cart="onAddToCart"
+                />
             </v-col>
         </v-row>
     </v-container>
@@ -50,29 +47,29 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue';
-    import { useRoute } from "vue-router";
-    import { useCart } from '@/composables/useCart';
-    import { useCatalogCategory } from '@/composables/useCatalogCategory';
-    import VLayoutDefault from '@/components/Layouts/VLayoutDefault.vue';
-    import VContainer from '@/components/VContainer.vue';
-    import VRow from '@/components/UI/VRow.vue';
-    import VCol from '@/components/UI/VCol.vue';
-    import VCatalogCard from '@/components/VCatalogCard.vue';
+  import { ref } from 'vue';
+  import { useRoute } from "vue-router";
+  import { useCart } from '@/composables/useCart';
+  import { useCatalogCategory } from '@/composables/useCatalogCategory';
+  import VLayoutDefault from '@/components/Layouts/VLayoutDefault.vue';
+  import VContainer from '@/components/VContainer.vue';
+  import VRow from '@/components/UI/VRow.vue';
+  import VCol from '@/components/UI/VCol.vue';
+  import VCatalogCard from '@/components/VCatalogCard.vue';
 
-    const route = useRoute();
+  const route = useRoute();
 
-    const filter = ref({
-      brand: '',
-      color: ''
-    });
+  const filter = ref({
+    brand: '',
+    color: ''
+  });
 
-    const { products, getProductsCategory } = useCatalogCategory();
-    const { onAddToCart } = useCart();
+  const { products, getProductsCategory } = useCatalogCategory();
+  const { onAddToCart } = useCart();
 
+  getProductsCategory(route.params.category, filter.value);
+
+  function onFilter () {
     getProductsCategory(route.params.category, filter.value);
-
-    function onFilter () {
-      getProductsCategory(route.params.category, filter.value);
-    }
+  }
 </script>

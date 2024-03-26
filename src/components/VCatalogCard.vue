@@ -1,23 +1,10 @@
 <template>
     <article class="v-catalog-card">
+        <br>
         <router-link :to="`/catalog/${category}/${id}`">
-            <div 
-                v-if="images.length"
-                class="v-catalog-card__gallery"
-            >
-                <img :src="currentImage" class="v-catalog-card__gallery-image">
-
-                <div class="v-catalog-card__gallery-areas">
-                    <div 
-                        v-for="(area, areaIndex) in images"
-                        class="v-catalog-card__gallery-areas__item"
-                        @mouseover="onMouseover(areaIndex)"
-                    />
-                </div>
-            </div>
-
+            <img class="v-catalog-card__image" :src="image" >
         </router-link>
-
+        <br>
         <router-link :to="`/catalog/${category}/${id}`">
             {{ title }}
         </router-link>
@@ -25,23 +12,8 @@
         <br>
 
         <div>
-            {{ price }} р.
+            {{ price }} ₽
         </div>
-
-        <br>
-
-        <v-input-number v-model="count"/>
-
-        <br>
-
-        <v-button
-            :theme="currentThemeFavoriteButton"
-            size="large"
-            wide
-            @click="onAddToFavorites"
-        >
-            {{ isFavorites ? 'Удалить из избранного' : 'Добавить в избранное' }}
-        </v-button>
 
         <v-button
             theme="primary"
@@ -49,15 +21,14 @@
             wide
             @click="onAddToCart"
         >
-            Добавить в корзину
+            <img src="/public/icons/add to cart.png" alt="add-to-cart" class="catalog-img">
         </v-button>
+        <br>
     </article>
 </template>
 
 <script setup>
-    import { ref, computed } from 'vue';
     import VButton from '@/components/UI/VButton.vue';
-    import VInputNumber from '@/components/UI/VInputNumber.vue';
 
     const props = defineProps({
         category: {
@@ -72,81 +43,57 @@
         title: {
             type: String
         },
-        images: {
-            type: Array
-        },
-        isFavorites: {
-            type: Boolean
+        image: {
+            type: String
         }
     });
 
     const emit = defineEmits([
-        'addToCart',
-        'addToFavorites'
+        'addToCart'
     ]);
 
-    const count = ref(1);
-
-    const currentImageIndex = ref(0);
-
-    const currentImage = computed(() => props.images[currentImageIndex.value]);
-
-    const currentThemeFavoriteButton = computed(() => {
-        return props.isFavorites
-            ? 'danger'
-            : 'success'
-    });
 
     function onAddToCart () {
         emit('addToCart', {
             title: props.title,
-            images: props.images,
+            image: props.image,
             price: props.price,
             id: props.id,
-            quantity: count.value
+            quantity: 1
         });
     }
 
-    function onAddToFavorites () {
-        emit('addToFavorites', {
-            id: props.id,
-            isFavorites: !props.isFavorites
-        });
-    }
-
-    function onMouseover (index) {
-        currentImageIndex.value = index;
-    }
 </script>
 
 <style>
-    .v-catalog-card {
-        border: 1px solid;
-    }
+.v-catalog-card {
+    border: 0px solid;
+}
 
-    .v-catalog-card__gallery {
-        position: relative;
-        width: 100%;
-        height: 200px;
-    }
+    .v-catalog-card__image {
+    display: block;
+    width: 281px;
+    height: 204px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-    .v-catalog-card__gallery-image {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
+.v-button {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    border: 0px;
+    float: right
+}
 
-    .v-catalog-card__gallery-areas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-flow: row nowrap;
-    }
+.v-button:hover {
+    background-color: transparent;
+}
 
-    .v-catalog-card__gallery-areas__item {
-        flex: 1;
-    }
+.catalog-img {
+    width: 28px;
+    padding: 0px;
+}
+
 </style>

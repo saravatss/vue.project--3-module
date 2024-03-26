@@ -84,30 +84,6 @@ const routes = [
         meta: {
             auth: true
         }
-    },
-    { 
-        name: 'ProductAdd',
-        path: '/profile/add-product', 
-        component: () => import('@/pages/profile/add-product.vue'),
-        meta: {
-            auth: true
-        }
-    },
-    { 
-        name: 'MyProducts',
-        path: '/profile/products', 
-        component: () => import('@/pages/profile/products.vue'),
-        meta: {
-            auth: true
-        }
-    },
-    { 
-        name: 'Favorites',
-        path: '/profile/favorites', 
-        component: () => import('@/pages/profile/favorites.vue'),
-        meta: {
-            auth: true
-        }
     }
 ];
 
@@ -122,7 +98,7 @@ router.beforeEach((to) => {
     const hasAuth = to.meta.auth;
     const title = to.meta.title;
 
-    document.title = title || 'Наш магазин';
+    document.title = title || 'Homie';
 
     if (hasAuth && !isAuth.value) {
         router.push('/auth/sign-in');

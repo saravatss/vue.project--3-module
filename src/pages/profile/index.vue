@@ -2,10 +2,6 @@
     <v-layout-default>
         <v-container>
             <nav>
-                <router-link to="/profile/add-product">
-                    Добавить товар
-                </router-link>
-
                 <router-link to="/profile/products">
                     Мои товары
                 </router-link>

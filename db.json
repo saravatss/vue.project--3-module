@@ -1,19 +1,19 @@
 {
   "orders": [
     {
-      "address": "sdfvsdv",
+      "address": "ул.Коммунистическая",
       "user": {
-        "firstName": "sdfv",
-        "lastName": "sdfv"
+        "firstName": "Марина",
+        "lastName": "Мирова"
       },
       "paymentId": "1",
       "deliveryId": "1",
       "promocode": "sdfvsdv",
       "products": [
         {
-          "title": "Samsung note 2",
-          "image": "https://placehold.co/600x400",
-          "price": 5000,
+          "title": "Столовые полотенца White Chrom",
+          "image": "Image1.png",
+          "price": 1899,
           "id": 2,
           "quantity": 7
         },
@@ -46,15 +46,14 @@
       "promocode": "",
       "products": [
         {
-          "title": "Samsung note 2",
-          "image": "https://placehold.co/600x400",
-          "price": 5000,
+          "title": "Столовые полотенца White Chrom",
+          "image": "Image1.png",
+          "price": 1899,
           "id": 2,
-          "quantity": 7,
-          "delay": true
+          "quantity": 7
         },
         {
-          "title": "iPhone 10",
+          "title": "Столовые полотенца White Chrom",
           "image": "https://placehold.co/600x400",
           "price": 5000,
           "id": 4,
@@ -62,7 +61,7 @@
           "delay": true
         },
         {
-          "title": "Samsung note 2",
+          "title": "Столовые полотенца White Chrom",
           "image": "https://placehold.co/600x400",
           "price": 7000,
           "id": 5,
@@ -91,7 +90,7 @@
           "quantity": 0
         },
         {
-          "title": "Ноут Димы",
+          "title": "Столовые полотенца White Chrom",
           "images": [
             "https://placehold.co/600x401",
             "https://placehold.co/600x402",
@@ -488,34 +487,23 @@
   ],
   "cart": [
     {
-      "title": "Samsung note 2",
-      "image": "https://placehold.co/600x400",
-      "price": 7000,
-      "id": 5,
-      "quantity": 1,
-      "delay": true
-    },
-    {
-      "title": "Ноут Димы",
-      "images": [
-        "https://placehold.co/600x401",
-        "https://placehold.co/600x402",
-        "https://placehold.co/600x403",
-        "https://placehold.co/600x404",
-        "https://placehold.co/600x405",
-        "https://placehold.co/600x406",
-        "https://placehold.co/600x407",
-        "https://placehold.co/600x408"
-      ],
-      "price": 100500,
-      "id": 6,
+      "id": 1,
+      "category": "Аксессуары для кухни",
+      "color": "white",
+      "image": "/Image1.png",
+      "description": "Столовые полотенца White Chrom - это элегантные, практичные и удобные полотенца, которые прекрасно впишутся в интерьер любой кухни. Они изготовлены из высококачественного 100% хлопка, что обеспечивает мягкость и высокую впитываемость. Благодаря своему белому цвету с хромированными деталями, эти полотенца добавят изысканности и стиля вашему кухонному пространству. Размеры полотенец - 50x70 см, что делает их универсальным вариантом для использования на кухне: они подходят для вытирания посуды, рук, а также для блеска столовой посуды. Прочный материал позволяет им оставаться в отличном состоянии даже после многократной стирки.",
+      "title": "Столовые полотенца White Chrom",
+      "categoryId": 1,
+      "price": 1899,
+      "userId": 2,
+      "isFavorites": false,
       "quantity": 1
     }
   ],
   "categories": [
     {
       "id": 1,
-      "title": "Смартфоны"
+      "title": "Кухонные мелочи"
     },
     {
       "id": 2,
@@ -525,65 +513,35 @@
   "products": [
     {
       "id": 1,
-      "brand": "Apple",
+      "category": "Аксессуары для кухни",
       "color": "white",
-      "image": "https://placehold.co/600x400",
-      "images": [
-        "https://placehold.co/600x401",
-        "https://placehold.co/600x402",
-        "https://placehold.co/600x403",
-        "https://placehold.co/600x404",
-        "https://placehold.co/600x405",
-        "https://placehold.co/600x406",
-        "https://placehold.co/600x407",
-        "https://placehold.co/600x408"
-      ],
-      "description": "d;ofnvos dnfoiv soidnfoi bnsdfoignb oidfngoib ndfoing boidfng boin",
-      "title": "iPhone 10",
+      "image": "/Image1.png",
+      "description": "Столовые полотенца White Chrom - это элегантные, практичные и удобные полотенца, которые прекрасно впишутся в интерьер любой кухни. Они изготовлены из высококачественного 100% хлопка, что обеспечивает мягкость и высокую впитываемость. Благодаря своему белому цвету с хромированными деталями, эти полотенца добавят изысканности и стиля вашему кухонному пространству. Размеры полотенец - 50x70 см, что делает их универсальным вариантом для использования на кухне: они подходят для вытирания посуды, рук, а также для блеска столовой посуды. Прочный материал позволяет им оставаться в отличном состоянии даже после многократной стирки.",
+      "title": "Столовые полотенца White Chrom",
       "categoryId": 1,
-      "price": 10000,
+      "price": 1899,
       "userId": 2,
       "isFavorites": false
     },
     {
       "id": 2,
-      "brand": "Samsung",
+      "category": "Столовая посуда",
       "color": "black",
-      "title": "Samsung note 2",
-      "image": "https://placehold.co/600x400",
-      "images": [
-        "https://placehold.co/600x401",
-        "https://placehold.co/600x402",
-        "https://placehold.co/600x403",
-        "https://placehold.co/600x404",
-        "https://placehold.co/600x405",
-        "https://placehold.co/600x406",
-        "https://placehold.co/600x407",
-        "https://placehold.co/600x408"
-      ],
+      "title": "Стаканы для сока Cuprum",
+      "image": "/Image2.png",
       "description": "d;ofnvos dnfoiv soidnfoi bnsdfoignb oidfngoib ndfoing boidfng boin",
       "categoryId": 1,
-      "price": 5000,
+      "price": 1299,
       "userId": 2,
       "isFavorites": true
     },
     {
       "id": 3,
-      "brand": "Acer",
-      "color": "red",
-      "title": "Acer ,fkf,fk",
-      "image": "https://placehold.co/600x400",
-      "images": [
-        "https://placehold.co/600x401",
-        "https://placehold.co/600x402",
-        "https://placehold.co/600x403",
-        "https://placehold.co/600x404",
-        "https://placehold.co/600x405",
-        "https://placehold.co/600x406",
-        "https://placehold.co/600x407",
-        "https://placehold.co/600x408"
-      ],
-      "description": "d;ofnvos dnfoiv soidnfoi bnsdfoignb oidfngoib ndfoing boidfng boin",
+      "brand": "Столовая посуда",
+      "color": "blue",
+      "title": "Плоские тарелки Sailor",
+      "image": "/Image3.png",
+      "description": "Плоские тарелки Sailor - это стильный и функциональный выбор для сервировки стола. Их изящный дизайн вдохновлен морской тематикой, что придает им особый шарм и уникальность. Изготовленные из качественного фарфора с глянцевой отделкой, эти тарелки отличаются прочностью и долговечностью, что делает их идеальным выбором для повседневного использования или особых случаев. Сочетание классического белого цвета и изящного морского узора на краю тарелок делает их привлекательными и стильными. Эти плоские тарелки станут прекрасным дополнением к любому приему пищи, будь то семейный ужин или праздничный обед. Их универсальный размер позволяет использовать их для сервировки различных блюд, от закусок до главных блюд.",
       "categoryId": 1,
       "price": 6000,
       "userId": 2,
@@ -591,21 +549,11 @@
     },
     {
       "id": 4,
-      "brand": "Apple",
-      "color": "red",
-      "image": "https://placehold.co/600x400",
-      "images": [
-        "https://placehold.co/600x401",
-        "https://placehold.co/600x402",
-        "https://placehold.co/600x403",
-        "https://placehold.co/600x404",
-        "https://placehold.co/600x405",
-        "https://placehold.co/600x406",
-        "https://placehold.co/600x407",
-        "https://placehold.co/600x408"
-      ],
-      "description": "d;ofnvos dnfoiv soidnfoi bnsdfoignb oidfngoib ndfoing boidfng boin",
-      "title": "iPhone 10",
+      "brand": "Столовая посуда",
+      "color": "green",
+      "image": "/Image4.png",
+      "description": "Коллекция Notele - простота и элегантность в вашем доме каждый день. Коллекция представлена в двух дизайнах из высококачественного фарфора. Простые формы подчёркиваются графическим декором, придающий предметам интересный вид. Коллекция Notele будет отличным дополнением к вашему интерьеру",
+      "title": "Тарелки Nesting Набор из 4 шт",
       "categoryId": 1,
       "price": 5000,
       "userId": 2,
