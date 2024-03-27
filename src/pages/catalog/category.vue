@@ -6,7 +6,7 @@
                 <div>
                   <h5 class="filter">По категории</h5>
                   <input type="radio" v-model="filter.category" value="Барные аксессуары"> Барные аксессуары<br>
-                  <input type="radio" v-model="filter.category" value="Столова посуда"> Столова посуда<br>
+                  <input type="radio" v-model="filter.category" value="Столова посуда"> Столовая посуда<br>
                   <input type="radio" v-model="filter.category" value="Аксессуары для кухни"> Аксессуары для кухни<br>
                   <input type="radio" v-model="filter.category" value="Сервировка стола"> Сервировка стола
                 </div>

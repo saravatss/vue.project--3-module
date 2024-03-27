@@ -12,7 +12,7 @@ export function useAuth () {
         AuthApiService.login(params)
             .then(data => {
                 if (!data.length) {
-                    alert('Не верный логин или пароль')
+                    alert('Неверный логин или пароль')
 
                     return;
                 }

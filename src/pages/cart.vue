@@ -6,7 +6,7 @@
             </div>
 
             <div>
-                Сумма товаров: {{ cartTotalSum }}р.
+                Сумма товаров: {{ cartTotalSum }} ₽.
             </div>
 
             <template v-if="cartNotDelay.length">

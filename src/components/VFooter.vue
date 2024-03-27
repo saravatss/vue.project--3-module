@@ -4,9 +4,9 @@
             <v-row>
                 <div class="footer-text">
                     <v-col class="footer-icons">
-                        <img src="/public/иконка vk без обводки.png" width="65px">
-                        <img src="/public/telegram без обводки 2.png" width="65px">
-                        <img src="/public/watsapp без обводки.png" width="65px">
+                        <img src="/иконка vk без обводки.png" width="65px">
+                        <img src="/telegram без обводки 2.png" width="65px">
+                        <img src="/watsapp без обводки.png" width="65px">
                     </v-col>
 
                     <v-col>
