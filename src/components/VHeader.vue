@@ -38,8 +38,8 @@
 
 
                     <v-col/>
-
-                    <router-link></router-link>
+                    
+                    <v-col/>
 
                     <v-col>
                         <router-link 

@@ -505,6 +505,18 @@
       "price": 1299,
       "id": 2,
       "quantity": 1
+    },
+    {
+      "title": "Плоские тарелки Sailor",
+      "id": 3,
+      "quantity": 1
+    },
+    {
+      "title": "Держатель для продуктов сетчатый Alla",
+      "image": "/Image5.png",
+      "price": 999,
+      "id": 5,
+      "quantity": 1
     }
   ],
   "categories": [
@@ -633,11 +645,11 @@
       "id": 2
     },
     {
-      "login": "Test",
-      "lastname": "Петров",
-      "firstname": "Петя",
-      "birthday": "2024-02-15",
-      "email": "test@mail.ru",
+      "login": "Irina1234",
+      "lastname": "Мягкова",
+      "firstname": "Ирина",
+      "birthday": "2000-02-15",
+      "email": "irina@mail.ru",
       "phone": "+79528889797",
       "password": "12345",
       "confirmPassword": "12345",
