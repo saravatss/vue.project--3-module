@@ -38,18 +38,18 @@
             </div>
 
             <div>
-                <h4>Тип доставки</h4>
+                <h4>Тип доставки курьером</h4>
                 
                 <div>
-                    <label><input type="radio" v-model="model.deliveryId" value="1" name="delivery"> Почта мать его России</label>
-                    <label><input type="radio" v-model="model.deliveryId" value="2" name="delivery"> Сдек</label>
-                    <label><input type="radio" v-model="model.deliveryId" value="3" name="delivery"> Самовывоз</label>
-                    <label><input type="radio" v-model="model.deliveryId" value="4" name="delivery"> Курьер</label>
+                    <label><input type="radio" v-model="model.deliveryId" value="1" name="delivery"> 20 марта</label>
+                    <label><input type="radio" v-model="model.deliveryId" value="2" name="delivery"> 25 марта </label>
+                    <label><input type="radio" v-model="model.deliveryId" value="3" name="delivery"> 28 марта </label>
+                    <label><input type="radio" v-model="model.deliveryId" value="4" name="delivery"> 31 марта</label>
                 </div>
             </div>
 
             <div>
-                <h4>Промокод на скидку</h4>
+                <h4>Введите промокод</h4>
 
                 <input type="text" v-model="model.promocode">
             </div>

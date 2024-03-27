@@ -1,6 +1,15 @@
 <template>
     <v-layout-default>
         <v-container>
+            
+
+            <div class="categories">
+                <img src="/public/organization.png" alt="org" width="220px">
+                <img src="/public/lamp.png" alt="lamp" width="220px">
+                <img src="/public/textil.png" alt="textil" width="220px">
+                <img src="/public/kitchen.png" alt="kitchen" width="220px">
+            </div>
+
             <h2>Трендовые товары</h2>
 
             <v-row>
@@ -45,3 +54,13 @@
     getProductsCategorySmartphones(1);
     getProductsCategoryLaptops(2);
 </script>
+
+<style>
+    .categories {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
+</style>

@@ -498,6 +498,13 @@
       "userId": 2,
       "isFavorites": false,
       "quantity": 1
+    },
+    {
+      "title": "Стаканы для сока Cuprum",
+      "image": "/Image2.png",
+      "price": 1299,
+      "id": 2,
+      "quantity": 1
     }
   ],
   "categories": [
@@ -624,6 +631,17 @@
       "password": "12345",
       "confirmPassword": "12345",
       "id": 2
+    },
+    {
+      "login": "Test",
+      "lastname": "Петров",
+      "firstname": "Петя",
+      "birthday": "2024-02-15",
+      "email": "test@mail.ru",
+      "phone": "+79528889797",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 3
     }
   ]
 }

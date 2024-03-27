@@ -39,15 +39,7 @@
 
                     <v-col/>
 
-                    <router-link 
-                        v-if="isAuth"
-                        to="/profile" 
-                        class="v-menu__item"
-                    >
-                        <template v-if="user">
-                            {{ user.firstname }}
-                        </template>
-                    </router-link>
+                    <router-link></router-link>
 
                     <v-col>
                         <router-link 

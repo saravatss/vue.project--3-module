@@ -85,6 +85,5 @@
 .v-catalog-card-bigger {
     width: 600px;
     height: 435px;
-    object-fit: cover;
 }
 </style>
