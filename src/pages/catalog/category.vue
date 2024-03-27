@@ -2,26 +2,35 @@
   <v-layout-default>
     <v-container>
       <v-row>
-              <div>
-                <h5>По категории</h5>
-                <input type="radio" v-model="filter.category" value="Барные аксессуары"> Барные аксессуары<br>
-                <input type="radio" v-model="filter.category" value="Столова посуда"> Столова посуда<br>
-                <input type="radio" v-model="filter.category" value="Аксессуары для кухни"> Аксессуары для кухни<br>
-                <input type="radio" v-model="filter.category" value="Сервировка стола"> Сервировка стола
-              </div>
+              <div class="filters">
+                <div>
+                  <h5 class="filter">По категории</h5>
+                  <input type="radio" v-model="filter.category" value="Барные аксессуары"> Барные аксессуары<br>
+                  <input type="radio" v-model="filter.category" value="Столова посуда"> Столова посуда<br>
+                  <input type="radio" v-model="filter.category" value="Аксессуары для кухни"> Аксессуары для кухни<br>
+                  <input type="radio" v-model="filter.category" value="Сервировка стола"> Сервировка стола
+                </div>
 
-              <div>
-                <h5>По цвету</h5>
-                <input type="radio" v-model="filter.color" value="white"> Белый<br>
-                <input type="radio" v-model="filter.color" value="black"> Чёрный<br>
-                <input type="radio" v-model="filter.color" value="red"> Красный
-              </div>
+                <div>
+                  <h5 class="filter">По цвету</h5>
+                  <input type="radio" v-model="filter.color" value="white"> Белый<br>
+                  <input type="radio" v-model="filter.color" value="black"> Чёрный<br>
+                  <input type="radio" v-model="filter.color" value="red"> Красный
+                </div>
 
+                <br>
+                <br>
+
+                <v-button
+                  theme="primary"
+                  size="large"
+                  wide
+                  @click="onFilter"
+                >
+                  Применить
+                </v-button>
+              </div>
               <br><br>
-
-              <button @click="onFilter">
-                Найти
-              </button>
         </v-row>
 
 
@@ -47,6 +56,7 @@
 </template>
 
 <script setup>
+  import VButton from '@/components/UI/VButton.vue';
   import { ref } from 'vue';
   import { useRoute } from "vue-router";
   import { useCart } from '@/composables/useCart';
@@ -73,3 +83,12 @@
     getProductsCategory(route.params.category, filter.value);
   }
 </script>
+
+<style>
+.filter {
+  border: 1px solid var(--color-blue);
+  border-radius: 32px;
+  padding: 8px 8px 8px 16px;
+  width: 120px;
+}
+</style>

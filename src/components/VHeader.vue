@@ -8,9 +8,11 @@
                     </v-col>
 
                     <v-col>
-                        <div class="ideas"
-                            <img src="/public/icons/ideas.png" alt="search" width="25px">
-                            Идеи
+                        <div class="ideas">
+                            <img src="/icons/ideas.png" alt="search" width="25px">
+                                <div class="ideas-text">
+                                    Идеи
+                                </div>
                         </div>
                     </v-col>
 
@@ -29,7 +31,7 @@
                             <input type="text" v-model="search" class="input-search" placeholder="Найдите то, что нужно">
 
                             <button @click="onSearch" class="button--search">
-                                <img src="/public/icons/search.png" alt="search" width="15px">
+                                <img src="/icons/search.png" alt="search" width="15px">
                             </button>
                         </div>
                     </v-col>
@@ -63,7 +65,7 @@
                             to="/auth/sign-in" 
                             class="v-menu__item"
                             >
-                            <img src="/public/icons/person.png" alt="person" width="25px">
+                            <img src="/icons/person.png" alt="person" width="25px">
                         </router-link>
                     </v-col>
 
@@ -71,7 +73,7 @@
                         <router-link 
                             to="/cart" 
                             class="v-menu__item">
-                                <img src="/public/icons/cart.png" alt="cart" width="25px">
+                                <img src="/icons/cart.png" alt="cart" width="25px">
                         </router-link>
                     </v-col>
 
@@ -85,6 +87,7 @@
     import { useRouter } from 'vue-router';
     import { useAuth } from '@/composables';
     import VRow from '@/components/UI/VRow.vue';
+    import VCol from '@/components/UI/VCol.vue';
     import VLogo from '@/components/VLogo.vue';
     import VSidebarMenu from '@/components/VSidebarMenu.vue';
     import VContainer from '@/components/VContainer.vue';
@@ -127,6 +130,9 @@
         height: 35px;
         width: 170px;
         font-family: Raleway;
+        border-radius: 6px;
+        padding-left: 8px;
+        border: 0px;
     }
 
     .fullinput-search {
@@ -136,6 +142,13 @@
     }
 
     .ideas {
-        justify-content: center;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .ideas-text {
+        font-family: Raleway;
+        font-size: 20px;
     }
 </style>

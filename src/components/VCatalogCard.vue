@@ -11,17 +11,14 @@
 
         <br>
 
-        <div>
+        <div class="catalog-price">
             {{ price }} ₽
         </div>
 
         <v-button
-            theme="primary"
-            size="large"
-            wide
             @click="onAddToCart"
         >
-            <img src="/public/icons/add to cart.png" alt="add-to-cart" class="catalog-img">
+            <img src="/icons/add to cart.png" alt="add-to-cart" class="catalog-img">
         </v-button>
         <br>
     </article>
@@ -70,7 +67,7 @@
     border: 0px solid;
 }
 
-    .v-catalog-card__image {
+.v-catalog-card__image {
     display: block;
     width: 281px;
     height: 204px;
@@ -80,11 +77,8 @@
 
 .v-button {
     display: block;
-    width: 28px;
-    height: 28px;
-    background-color: transparent;
     border: 0px;
-    float: right
+    float: right;
 }
 
 .v-button:hover {
@@ -94,6 +88,6 @@
 .catalog-img {
     width: 28px;
     padding: 0px;
+    background-color: transparent;
 }
-
 </style>

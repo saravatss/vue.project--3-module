@@ -61,7 +61,7 @@
 
         display: flex;
         flex-flow: column nowrap;
-        gap: 8px;
+        gap: 5px;
         border: 0;
         padding: 0;
         background-color: transparent;

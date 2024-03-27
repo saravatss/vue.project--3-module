@@ -1,11 +1,6 @@
 <template>
     <v-layout-default>
         <v-container>
-            <nav>
-                <router-link to="/profile/products">
-                    Мои товары
-                </router-link>
-            </nav>
 
             <br><br>
 
