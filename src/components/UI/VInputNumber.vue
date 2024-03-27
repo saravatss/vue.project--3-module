@@ -1,10 +1,13 @@
 <template>
     <div class="v-input-number">
-        <button @click="onDecrement" :disabled="disabled">-</button>
+        <button class="input--buttons" @click="onDecrement" :disabled="disabled">—</button>
 
-        <input type="number" readonly v-model="modelValue">
+        <input class="cart-number" type="number" readonly v-model="modelValue" 
+    background-color="transparent"
+    border="0px"
+    width="10px">
 
-        <button @click="onIncrement" :disabled="disabled">+</button>
+        <button class="input--buttons" @click="onIncrement" :disabled="disabled">+</button>
     </div>
 </template>
 
@@ -45,3 +48,28 @@
         }
     }
 </script>
+
+<style>
+    .v-input-number {
+        border-radius: 32px;
+        align-items: center;
+        border: 2px solid;
+        border-color: #000000;
+        display: flex;
+        height: 26px;;
+        padding: 12px;
+        width: 100px;
+    }
+
+    .input--buttons {
+        border: 0px;
+        background-color: transparent;
+
+    }
+
+    .cart-number {
+        width: 27px;
+        background-color: transparent;
+        border: 0px;
+    }
+</style>

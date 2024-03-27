@@ -14,6 +14,7 @@
         <div class="catalog-price">
             {{ price }} ₽
         </div>
+        
 
         <v-button
             @click="onAddToCart"

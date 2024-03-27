@@ -1,29 +1,28 @@
 <template>
+
+
     <div class="v-cart-card">
-        <div>{{ title }}</div>
+        <div class="cart-card-text">
+            <div class="cart-card-title">{{ title }}</div>
 
-        <div>{{ price }}</div>
+            <div class="cart-card-brand">Appa</div>
 
+            <div class="cart-card-title cart-card-price">{{ price }} ₽ </div>
+        </div>
+
+    <div class="cart-card-right-side">
         <v-input-number 
             v-model="count"
             @update:modelValue="onChangeCount"
         />
         
-        <v-button @click="onDelete">
-            Удалить
+        <v-button @click="onDelete" :style height="24px">
+            <img src="/public/delete.png" width="16px" border="0px">
         </v-button>
+    </div>
 
         <br><br>
 
-        <label>
-            <input 
-                type="checkbox" 
-                v-model="checked"
-                @change="onChangeDelay"
-            > 
-            
-            Добавить в отложенные
-        </label>
         <hr>
     </div>
 </template>
@@ -82,3 +81,29 @@
         emit('delete', props.id);
     }
 </script>
+
+<style>
+    .v-cart-card {
+        display: flex;
+        margin-bottom: 40px;
+    }
+
+    .cart-card-title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .cart-card-price {
+        margin-top: 48px;
+    }
+
+    .cart-card-brand {
+        margin-top: 12px;
+    }
+    
+    .cart-card-right-side {
+        display: flex;
+        align-content: flex-start;
+        margin-right: 32px;
+    }
+</style>

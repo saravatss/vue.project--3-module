@@ -487,25 +487,11 @@
   ],
   "cart": [
     {
-      "title": "Стаканы для сока Cuprum",
-      "image": "/Image2.png",
-      "price": 1299,
-      "id": 2,
-      "quantity": 1
-    },
-    {
       "title": "Плоские тарелки Sailor",
       "image": "/Image3.png",
       "price": 999,
       "id": 3,
-      "quantity": 1
-    },
-    {
-      "title": "Тарелки Nesting Набор из 4 шт",
-      "image": "/Image4.png",
-      "price": 5000,
-      "id": 4,
-      "quantity": 1
+      "quantity": 2
     }
   ],
   "categories": [

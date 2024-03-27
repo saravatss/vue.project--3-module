@@ -1,6 +1,7 @@
 <template>
     <v-layout-default>
         <v-container>
+        <div class="order">
             <div>
                 Кол-во товаров: {{ cartTotalCount }}
             </div>
@@ -8,9 +9,11 @@
             <div>
                 Сумма товаров: {{ cartTotalSum }} ₽.
             </div>
+        </div>  
+        
 
             <template v-if="cartNotDelay.length">
-                <h5>Товары</h5>
+                <h2>Корзина</h2>
                 <v-cart-card 
                     v-for="cartItem in cartNotDelay"
                     :id="cartItem.id"
@@ -25,21 +28,6 @@
                 />
             </template>
 
-            <template v-if="cartDelay.length">
-                <h5>Отложенные товары</h5>
-                <v-cart-card 
-                    v-for="cartItem in cartDelay"
-                    :id="cartItem.id"
-                    :title="cartItem.title"
-                    :price="cartItem.price"
-                    :quantity="cartItem.quantity"
-                    :image="cartItem.image"
-                    :delay="cartItem.delay"
-                    @change-count="onChangeCount"
-                    @change-delay="onChangeDelay"
-                    @delete="onDelete"
-                />
-            </template>
 
             <router-link to="/ordering">
                 Перейти к оформлению
@@ -55,7 +43,6 @@
     import VCartCard from '@/components/VCartCard.vue';
 
     const { 
-        cartDelay,
         cartNotDelay,
         cartTotalCount, 
         cartTotalSum, 
